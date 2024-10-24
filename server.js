@@ -43,8 +43,30 @@ app.get('/quiz', async (req, res) => {
         // select a random counrty
         const randIndex = Math.floor(Math.random() * countriesArr.length)
         // save to a variable
-        const correctCountry = countriesArr[randIndex]
-        console.log(correctCountry)
+        const correctCountry = countriesArr[randIndex]        
+        // get random wrong answers
+        const wrongAnswers = []        
+        const wrongIndices = new Set([randIndex])
+
+        // logic to get some random numbers
+        while (wrongAnswers.length < 2) {
+            
+            const index = Math.floor(Math.random() * countriesArr.length)
+            
+            if (!wrongIndices.has(index)) {
+                wrongAnswers.push(countriesArr[index].capital)
+                wrongIndices.add(index)
+            }
+        }
+
+        // spread and shuffle the answers
+        const answers = [...wrongAnswers, correctCountry.capital].sort(() => Math.random() - 0.5)
+        // Return the data
+        res.json({
+            country: correctCountry.name,
+            answers: answers,
+            correctAnswer: correctCountry.capital
+        })
     } 
     
     catch (error) {
