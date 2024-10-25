@@ -24,7 +24,6 @@ async function getCountries() {
         const validCountries = res.data.data.filter(country => {
             return country.capital && country.capital !== ""
         })
-        console.log(validCountries)
         countriesArr = validCountries
         return countriesArr;
     } catch (error) {

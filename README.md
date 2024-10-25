@@ -49,11 +49,18 @@ npm install
 ```
 
 4. Set up environment variables:
-Create a `.env` file in the backend directory with:
+- Create a `.env` file in the backend directory with:
 ```env
 PORT=5000
 ```
-
+```
+COUNTRY_API_URL=https://countriesnow.space/api/v0.1/countries/capital
+```
+- And an `.env` file in the frontend directory with:
+```
+REACT_APP_BACKEND_URL=http://localhost:5000
+```
+---
 ## Required Packages
 
 ### Backend
@@ -94,12 +101,7 @@ https://countriesnow.space/api/v0.1/countries/capital
 ---
 ## Planning
 
-
-**Project Wireframe -**
-![Wireframe1](/client/src/assets/wireframe1.png)
-
-**Project Trello -**
-![trello1](/client/src/assets/trello1.png)
+For this back end utilised Postman to check the API woutes and custom endpoint before connecting to the front end. More information on the process can be founf on my frontend readme here [Frontend Readme](https://github.com/8055-NVW/Capital-Cities-Quiz-Frontend/blob/main/README.md)
 
 ---
 ## Future Improvements
@@ -107,7 +109,6 @@ https://countriesnow.space/api/v0.1/countries/capital
 - Add comprehensive error handling
 - Add a timer for each question
 
----
+<!-- ---
 ## Bugs
----
-
+--- -->
